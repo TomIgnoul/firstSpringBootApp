@@ -1,0 +1,12 @@
+create table Product(
+	ProductID INT PRIMARY KEY AUTO_INCREMENT,
+	VARCHAR(100) NOT NULL,
+	Description TEXT,
+	Price DECIMAL(10,2) NOT NULL,
+	Quantity INT NOT NULL,
+	Img VARCHAR(255),
+	UserID INT NOT NULL,
+	CategoryID INT NOT NULL,
+	FOREIGN KEY (UserID) REFERENCES User(UserID),
+	FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
+);
