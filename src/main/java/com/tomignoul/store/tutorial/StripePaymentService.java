@@ -1,4 +1,4 @@
-package com.tomignoul.store;
+package com.tomignoul.store.tutorial;
 
 public class StripePaymentService implements PaymentService {
     @Override

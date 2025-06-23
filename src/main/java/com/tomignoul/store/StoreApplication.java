@@ -1,7 +1,8 @@
 package com.tomignoul.store;
 
+import com.tomignoul.store.tutorial.OrderService;
+import com.tomignoul.store.tutorial.PayPalPaymentService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.core.annotation.Order;
 
 @SpringBootApplication
 public class StoreApplication {
