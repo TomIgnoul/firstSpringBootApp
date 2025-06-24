@@ -1,9 +1,12 @@
 package com.tomignoul.store.model;
-import jakarta.persistence.Embedded;
+import jakarta.persistence.*;
 import org.springframework.context.annotation.Import;
 
-
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;
@@ -12,6 +15,7 @@ public class User {
     private double contactnumber;
     private String password;
     private UserRole role;
+
 
     public String getFirstName() {
         return firstName;
@@ -67,5 +71,13 @@ public class User {
 
     public void setRole(UserRole role) {
         this.role = role;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
