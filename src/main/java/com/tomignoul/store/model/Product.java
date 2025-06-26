@@ -1,13 +1,9 @@
 package com.tomignoul.store.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 
 @Entity
@@ -25,6 +21,8 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+    @OneToMany(mappedBy = "productID")
+    private List<OrderItem> orderItems;
     //constructors
     public Product(long productId, String description, BigDecimal price, double quantity, String img, User user, Category category) {
         this.productId = productId;

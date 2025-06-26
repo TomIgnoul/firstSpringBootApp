@@ -2,6 +2,8 @@ package com.tomignoul.store.model;
 import jakarta.persistence.*;
 import org.springframework.context.annotation.Import;
 
+import java.util.List;
+
 @Entity
 public class User {
     @Id
@@ -15,8 +17,31 @@ public class User {
     private double contactnumber;
     private String password;
     private UserRole role;
+    //foreign keys
+    @OneToMany(mappedBy = "user")
+    private List<CustomerOrder> orders;
+    @OneToOne(mappedBy ="user")
+    private Cart cart;
 
 
+    //constructors
+
+
+    public User(Long id, String firstName, String lastName, String email, Address address, double contactnumber, String password, UserRole role, List<CustomerOrder> orders) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.address = address;
+        this.contactnumber = contactnumber;
+        this.password = password;
+        this.role = role;
+        this.orders = orders;
+    }
+
+    public User() {}
+
+    //Getters & Setters
     public String getFirstName() {
         return firstName;
     }
