@@ -1,7 +1,7 @@
 package com.tomignoul.store;
 
 import com.tomignoul.store.model.Address;
-import com.tomignoul.store.repository.UserRepository;
+import com.tomignoul.store.repository.user.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
