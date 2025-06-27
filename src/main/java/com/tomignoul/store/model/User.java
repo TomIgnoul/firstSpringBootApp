@@ -14,20 +14,21 @@ public class User {
     private String email;
     @Embedded
     private Address address;
-    private double contactnumber;
+    private Long contactnumber;
     private String password;
+    @Enumerated(EnumType.STRING)
     private UserRole role;
     //foreign keys
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<CustomerOrder> orders;
-    @OneToOne(mappedBy ="user")
+    @OneToOne(mappedBy ="user", cascade = CascadeType.ALL)
     private Cart cart;
 
 
     //constructors
 
 
-    public User(Long id, String firstName, String lastName, String email, Address address, double contactnumber, String password, UserRole role, List<CustomerOrder> orders) {
+    public User(Long id, String firstName, String lastName, String email, Address address, Long contactnumber, String password, UserRole role, List<CustomerOrder> orders) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -74,11 +75,11 @@ public class User {
         this.address = address;
     }
 
-    public double getContactnumber() {
+    public Long getContactnumber() {
         return contactnumber;
     }
 
-    public void setContactnumber(double contactnumber) {
+    public void setContactnumber(Long contactnumber) {
         this.contactnumber = contactnumber;
     }
 

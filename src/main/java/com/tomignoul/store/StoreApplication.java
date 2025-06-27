@@ -13,7 +13,7 @@ import com.tomignoul.store.model.UserRole;
 public class StoreApplication implements CommandLineRunner {
 
     private final UserRepository userRepository;
-    Address address1 = new Address("street", "city", "1", "2299", "Belgium");
+
 
     public StoreApplication(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -25,6 +25,7 @@ public class StoreApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        Address address1 = new Address("street", "city", "1", "2299", "Belgium");
         User user = new User();
         user.setFirstName("Zane");
         user.setLastName("Tester");

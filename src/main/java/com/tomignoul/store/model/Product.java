@@ -16,12 +16,12 @@ public class Product {
     private double quantity;
     private String img;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userID")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "categoryID")
     private Category category;
-    @OneToMany(mappedBy = "productID")
+    @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems;
     //constructors
     public Product(long productId, String description, BigDecimal price, double quantity, String img, User user, Category category) {
@@ -37,11 +37,11 @@ public class Product {
 
     // Getters & Setters
 
-    public long getproductId() {
+    public long getProductId() {
         return productId;
     }
 
-    public void setproductId(long productId) {
+    public void setProductId(long productId) {
         this.productId = productId;
     }
 

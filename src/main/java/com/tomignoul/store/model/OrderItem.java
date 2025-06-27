@@ -10,13 +10,13 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long orderItemID;
     private int quantity;
-    private BigDecimal Price;
+    private BigDecimal price;
 
     //foreign Keys
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "OrderID")
     private CustomerOrder customerOrder;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "productID")
     private Product product;
 
@@ -24,7 +24,7 @@ public class OrderItem {
     public OrderItem(long orderItemID, int quantity, BigDecimal price, CustomerOrder customerOrder, Product product) {
         this.orderItemID = orderItemID;
         this.quantity = quantity;
-        Price = price;
+        this.price = price;
         this.customerOrder = customerOrder;
         this.product = product;
     }
@@ -50,11 +50,11 @@ public class OrderItem {
     }
 
     public BigDecimal getPrice() {
-        return Price;
+        return price;
     }
 
     public void setPrice(BigDecimal price) {
-        Price = price;
+        this.price = price;
     }
 
     public CustomerOrder getCustomerOrder() {
