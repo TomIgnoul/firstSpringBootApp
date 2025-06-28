@@ -14,18 +14,18 @@ public class OrderItem {
 
     //foreign Keys
     @ManyToOne
-    @JoinColumn(name = "OrderID")
-    private CustomerOrder customerOrder;
+    @JoinColumn(name = "cartID")
+    private Cart cart;
     @ManyToOne
     @JoinColumn(name = "productID")
     private Product product;
 
     //constructors
-    public OrderItem(long orderItemID, int quantity, BigDecimal price, CustomerOrder customerOrder, Product product) {
+    public OrderItem(long orderItemID, int quantity, BigDecimal price, Cart cart, Product product) {
         this.orderItemID = orderItemID;
         this.quantity = quantity;
         this.price = price;
-        this.customerOrder = customerOrder;
+        this.cart = cart;
         this.product = product;
     }
 
@@ -57,12 +57,12 @@ public class OrderItem {
         this.price = price;
     }
 
-    public CustomerOrder getCustomerOrder() {
-        return customerOrder;
+    public Cart getCart() {
+        return cart;
     }
 
-    public void setCustomerOrder(CustomerOrder customerOrder) {
-        this.customerOrder = customerOrder;
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 
     public Product getProduct() {

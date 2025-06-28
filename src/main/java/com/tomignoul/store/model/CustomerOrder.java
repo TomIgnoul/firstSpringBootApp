@@ -11,16 +11,15 @@ public class CustomerOrder {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long orderId;
     private BigDecimal totalAmount;
-    @Column(name = "OrderDate", updatable = false, insertable = false)
     private LocalDateTime orderDate;
     @ManyToOne
     @JoinColumn(name= "UserID")
     private User user;
 
     //constructors
-    public CustomerOrder(BigDecimal totalAmount, LocalDateTime orderDate, User user) {
+    public CustomerOrder(BigDecimal totalAmount, User user) {
         this.totalAmount = totalAmount;
-        this.orderDate = orderDate;
+        this.orderDate = LocalDateTime.now();
         this.user = user;
     }
 
