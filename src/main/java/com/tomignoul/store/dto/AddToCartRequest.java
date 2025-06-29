@@ -3,13 +3,15 @@ package com.tomignoul.store.dto;
 public class AddToCartRequest {
     private long productID;
     private int quantity;
+    private long userID;
     //constructors
     public AddToCartRequest() {
     }
 
-    public AddToCartRequest(long productID, int quantity) {
+    public AddToCartRequest(long productID, int quantity, long userID) {
         this.productID = productID;
         this.quantity = quantity;
+        this.userID =  userID;
     }
 
     //Setters & Getters
@@ -28,5 +30,13 @@ public class AddToCartRequest {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public long getUserID() {
+        return userID;
+    }
+
+    public void setUserID(long userID) {
+        this.userID = userID;
     }
 }
