@@ -1,25 +1,27 @@
 package com.tomignoul.store.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "Category") // tabelnaam in DB (met hoofdletter)
 public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CategoryID") // kolomnaam in DB
     private long id;
+
+    @Column(name = "CategoryName") // kolomnaam in DB
     private String categoryName;
 
-    //constructors
+    // constructors
+    public Category() {}
+
     public Category(String categoryName) {
         this.categoryName = categoryName;
     }
 
-    public Category(){};
-
-    //Getters & Setters
+    // getters & setters
     public long getId() {
         return id;
     }
@@ -36,3 +38,4 @@ public class Category {
         this.categoryName = categoryName;
     }
 }
+

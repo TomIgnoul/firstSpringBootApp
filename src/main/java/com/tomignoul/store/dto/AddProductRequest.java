@@ -13,6 +13,7 @@ public class AddProductRequest {
     private long userID;
     private long productID;
 
+    public AddProductRequest(){};
     public AddProductRequest(String description,
                           BigDecimal price, double quantity,
                           String img, Category category,
@@ -26,6 +27,7 @@ public class AddProductRequest {
         this.userID=userID;
         this.productID=productID;
     }
+
 
     //Getters & Setters
     public String getDescription() {

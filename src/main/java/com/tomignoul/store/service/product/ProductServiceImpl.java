@@ -1,17 +1,24 @@
 package com.tomignoul.store.service.product;
 
 import com.tomignoul.store.dto.AddProductRequest;
+import com.tomignoul.store.model.Category;
 import com.tomignoul.store.model.Product;
+import com.tomignoul.store.repository.category.CategoryRepository;
 import com.tomignoul.store.repository.product.ProductRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
+    private final CategoryRepository categoryRepository;
 
     //constructor
-    public ProductServiceImpl(ProductRepository productRepository){
+    public ProductServiceImpl(ProductRepository productRepository,
+                              CategoryRepository categoryRepository){
         this.productRepository = productRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     @Override
@@ -39,9 +46,10 @@ public class ProductServiceImpl implements ProductService {
         product.setPrice(request.getPrice());
         product.setQuantity(request.getQuantity());
         product.setImg(request.getImg());
-        product.setCategory(request.getCategory());
+        Category category = categoryRepository.findById(request.getCategory().getId())
+                .orElseThrow(()-> new RuntimeException("Category not found: "));
+        product.setCategory(category);
         //slaan deze op
         productRepository.save(product);
     }
-
 }

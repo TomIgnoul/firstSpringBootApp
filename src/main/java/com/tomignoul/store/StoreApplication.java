@@ -34,7 +34,7 @@ public class StoreApplication implements CommandLineRunner {
         user.setAddress(address1);
         user.setRole(UserRole.CUSTOMER);
 
-        userRepository.save(user);
+//        userRepository.save(user);
     }
 }
 
