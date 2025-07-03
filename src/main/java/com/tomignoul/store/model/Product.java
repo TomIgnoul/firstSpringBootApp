@@ -11,6 +11,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long productId;
+    private String name;
     private String description;
     private BigDecimal price;
     private double quantity;
@@ -24,7 +25,7 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems;
     //constructors
-    public Product(long productId, String description, BigDecimal price, double quantity, String img, User user, Category category) {
+    public Product(long productId, String name,String description, BigDecimal price, double quantity, String img, User user, Category category) {
         this.productId = productId;
         this.description = description;
         this.price = price;
@@ -43,6 +44,14 @@ public class Product {
 
     public void setProductId(long productId) {
         this.productId = productId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {

@@ -8,6 +8,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userID")
     private Long id;
     private String firstName;
     private String lastName;
@@ -99,11 +100,11 @@ public class User {
         this.role = role;
     }
 
-    public void setId(Long id) {
+    public void setUserID(Long id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public Long getUserID() {
         return id;
     }
 }
