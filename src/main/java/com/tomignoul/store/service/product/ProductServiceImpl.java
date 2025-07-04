@@ -1,6 +1,6 @@
 package com.tomignoul.store.service.product;
 
-import com.tomignoul.store.dto.AddProductRequest;
+import com.tomignoul.store.dto.product.AddProductRequest;
 import com.tomignoul.store.model.Category;
 import com.tomignoul.store.model.Product;
 import com.tomignoul.store.model.User;

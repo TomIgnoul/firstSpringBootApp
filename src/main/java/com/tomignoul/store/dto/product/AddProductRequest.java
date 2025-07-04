@@ -1,4 +1,4 @@
-package com.tomignoul.store.dto;
+package com.tomignoul.store.dto.product;
 
 import com.tomignoul.store.model.Category;
 

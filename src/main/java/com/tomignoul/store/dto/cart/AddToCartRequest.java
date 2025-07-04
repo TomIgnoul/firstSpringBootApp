@@ -1,4 +1,4 @@
-package com.tomignoul.store.dto;
+package com.tomignoul.store.dto.cart;
 
 public class AddToCartRequest {
     private long productID;

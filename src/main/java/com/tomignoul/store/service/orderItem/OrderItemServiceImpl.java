@@ -1,6 +1,6 @@
 package com.tomignoul.store.service.orderItem;
 
-import com.tomignoul.store.dto.AddToCartRequest;
+import com.tomignoul.store.dto.cart.AddToCartRequest;
 import com.tomignoul.store.model.Cart;
 import com.tomignoul.store.model.OrderItem;
 import com.tomignoul.store.model.Product;

@@ -1,7 +1,8 @@
 package com.tomignoul.store.controller.product;
 
 
-import com.tomignoul.store.dto.AddProductRequest;
+import com.tomignoul.store.dto.product.AddProductRequest;
+import com.tomignoul.store.dto.product.SearchProductRequest;
 import com.tomignoul.store.service.product.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,5 +29,11 @@ public class ProductController {
         productService.addProductFromDto(request);
         return ResponseEntity.ok("Product added!");
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<String> searchProducts(@ModelAttribute SearchProductRequest request) {
+        return ResponseEntity.ok("Search endpoint bereikt!");
+    }
+
 }
 

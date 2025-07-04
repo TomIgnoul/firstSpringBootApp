@@ -4,8 +4,7 @@
 
 package com.tomignoul.store.controller.cart;
 
-import com.tomignoul.store.dto.AddToCartRequest;
-import com.tomignoul.store.model.Cart;
+import com.tomignoul.store.dto.cart.AddToCartRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
