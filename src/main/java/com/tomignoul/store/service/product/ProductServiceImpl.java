@@ -1,6 +1,7 @@
 package com.tomignoul.store.service.product;
 
 import com.tomignoul.store.dto.product.AddProductRequest;
+import com.tomignoul.store.dto.product.SearchProductRequest;
 import com.tomignoul.store.model.Category;
 import com.tomignoul.store.model.Product;
 import com.tomignoul.store.model.User;
@@ -9,6 +10,8 @@ import com.tomignoul.store.repository.product.ProductRepository;
 import com.tomignoul.store.repository.user.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -62,4 +65,12 @@ public class ProductServiceImpl implements ProductService {
         //slaan deze op
         productRepository.save(product);
     }
+
+    @Override
+    public List<String> searchProducts(SearchProductRequest request){
+        List<String> results = new ArrayList<>();
+        results.add("Product gevonden: " + request.getKeyword() + " (" + request.getCategory() + ")");
+        return results;
+    }
+
 }
