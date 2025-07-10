@@ -1,4 +1,4 @@
-import { CategoryButtons } from "../components/search/CategoryButtons.js";
+import { CategoryButtons } from "../components/category/CategoryButtons.js";
 
 export function renderSearch() {
   const app = document.getElementById("app");
@@ -7,6 +7,8 @@ export function renderSearch() {
     <section>
       <h2>Categorieën</h2>
       <div id="category-container"></div>
+          <h3>Kies een subcategorie:</h3>
+    <div id="subcategory-container"></div>
     </section>
   `;
 

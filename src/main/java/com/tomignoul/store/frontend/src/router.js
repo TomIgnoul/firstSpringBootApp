@@ -6,12 +6,12 @@ export function setupRouter() {
     const hash = window.location.hash;
 
     if (hash === "#search") {
-      renderSearch(); // ✅ correct aangeroepen
+      renderSearch();
     } else {
       renderLanding();
     }
   }
 
   window.addEventListener("hashchange", route);
-  route(); // initial load
+  route();
 }
