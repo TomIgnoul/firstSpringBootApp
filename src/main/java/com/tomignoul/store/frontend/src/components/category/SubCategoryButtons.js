@@ -1,10 +1,28 @@
-import { SubCategoryButtons } from "../Category/CategoryButtons";
+import { subcategories } from "../../utils/categories.js";
 
-export function SubCategoryButtons() {
-  return subcategories.map((subcatogry, index) => {
-    const subRadioButton = document.createElement("subRadioButton");
-    subRadioButton.textContent = subcatogry;
-    subRadioButton.classname = "radio-button";
-    subRadioButton.button.dataset.index = index;
+export function handleCategoryClick(categoryName) {
+  const container = document.getElementById("subcategory-container");
+
+  container.innerHTML = "";
+
+  const subs = subcategories[categoryName];
+  if (!subs || subs.length === 0) {
+    container.textContent = "Geen subcategorieën beschikbaar.";
+    return;
+  }
+
+  subs.forEach((subcat, index) => {
+    const label = document.createElement("label");
+    label.textContent = subcat;
+    label.style.display = "block";
+
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "subcategorie";
+    radio.value = subcat;
+    radio.id = `subcat-${index}`;
+
+    label.prepend(radio);
+    container.appendChild(label);
   });
 }
